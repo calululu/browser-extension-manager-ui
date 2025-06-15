@@ -2,7 +2,6 @@ import Button from "./Button";
 import SwitchButton from "./SwitchButton";
 import { type CardType } from "../types/type";
 import { useState } from "react";
-import { useModal } from "../contexts/modalContext/useModal";
 
 export default function Card({
   name,
@@ -12,7 +11,6 @@ export default function Card({
   onRemove,
 }: CardType & { onRemove?: () => void }) {
   const [active, setActive] = useState(isActive);
-  const { openDeleteModal } = useModal();
 
   const toggleActive = () => {
     setActive(!active);
@@ -32,7 +30,7 @@ export default function Card({
         </div>
       </div>
       <div className="mt-8 flex items-center justify-between">
-        <Button modal="" handleClick={openDeleteModal}>
+        <Button modal="" handleClick={onRemove}>
           Remove
         </Button>
         <SwitchButton isActive={active} onToggle={toggleActive} />
