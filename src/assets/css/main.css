@@ -23,13 +23,6 @@
 }
 
 @layer components {
-  .light-gradient {
-    background: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
-  }
-  .dark-gradient {
-    background: linear-gradient(180deg, #040816 0%, #091540 100%);
-  }
-
   body {
     font-family: notosans-r, sans-serif;
     color: var(--color-neutral-800);
