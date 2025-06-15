@@ -1,8 +1,0 @@
-@import "tailwindcss";
-
-@layer components {
-}
-
-@theme {
-  --color-blue-footer: hsl(228, 45%, 44%);
-}

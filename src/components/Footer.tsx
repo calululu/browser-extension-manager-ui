@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <div className="text-center">
+    <div className="dark:text-neutral-0 mt-8 text-center">
       Challenge by
       <a
         className="text-blue-footer"
@@ -10,7 +10,10 @@ export default function Footer() {
         Frontend Mentor.
       </a>{" "}
       Coded by{" "}
-      <a className="text-blue-footer" href="#">
+      <a
+        className="text-blue-footer"
+        href="https://github.com/calululu/browser-extension-manager-ui"
+      >
         Calulu
       </a>
       .

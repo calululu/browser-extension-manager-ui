@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: notosans-r;
+  src: url("../fonts/static/NotoSans-Regular.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: notosans-m;
+  src: url("../fonts/static/NotoSans-Medium.ttf");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: notosans-b;
+  src: url("../fonts/static/NotoSans-Bold.ttf");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@layer components {
+  .light-gradient {
+    background: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  }
+  .dark-gradient {
+    background: linear-gradient(180deg, #040816 0%, #091540 100%);
+  }
+
+  body {
+    font-family: notosans-r, sans-serif;
+    color: var(--color-neutral-800);
+  }
+}
+
+@theme {
+  --color-blue-footer: hsl(228, 45%, 44%);
+
+  --color-neutral-900: hsl(225, 71%, 5%);
+  --color-neutral-800: hsl(227, 75%, 14%);
+  --color-neutral-700: hsl(226, 25%, 17%);
+  --color-neutral-600: hsl(225, 23%, 24%);
+  --color-neutral-500: hsl(226, 11%, 37%);
+  --color-neutral-300: hsl(0, 0%, 78%);
+  --color-neutral-200: hsl(217, 61%, 90%);
+  --color-neutral-100: hsl(0, 0%, 93%);
+  --color-neutral-0: hsl(200, 60%, 99%);
+  --color-red-700: hsl(3, 77%, 44%);
+  --color-red-500: hsl(3, 71%, 56%);
+  --color-red-400: hsl(3, 86%, 64%);
+
+  --font-notosans-r: notosans-r, sans-serif;
+  --font-notosans-m: notosans-m, sans-serif;
+  --font-notosans-b: notosans-b, sans-serif;
+}
+
+/*darkmode */
+@custom-variant dark (&:where(.dark, .dark *));
