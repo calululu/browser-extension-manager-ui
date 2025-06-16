@@ -4,3 +4,5 @@ export type CardType = {
   description: string;
   isActive: boolean;
 };
+
+export type FilterOption = "All" | "Active" | "Inactive";

@@ -5,34 +5,29 @@ export default function Button({
 }: {
   children: string;
   modal?: "" | "yes" | "no";
-  handleClick?: () => void | boolean;
+  handleClick?: () => void;
 }) {
-  if (modal === "yes") {
-    return (
-      <button
-        onClick={handleClick}
-        className="font-notosans-m rounded-4xl border-1 hover:text-neutral-0 cursor-pointer border-neutral-300 bg-neutral-100 px-4 py-2 text-neutral-900 shadow hover:border-red-700 hover:bg-red-700 dark:border-0 dark:border-neutral-500 dark:bg-neutral-400 dark:text-neutral-900 dark:hover:border-red-500 dark:hover:bg-red-500 dark:hover:text-neutral-900"
-      >
-        {children}
-      </button>
-    );
-  } else if (modal === "no") {
-    return (
-      <button
-        onClick={handleClick}
-        className="font-notosans-m rounded-4xl border-1 hover:text-neutral-0 cursor-pointer border-neutral-300 bg-red-100 px-4 py-2 text-neutral-900 shadow hover:border-red-700 hover:bg-red-700 dark:border-0 dark:border-neutral-500 dark:bg-red-300 dark:text-neutral-900 dark:hover:border-red-500 dark:hover:bg-red-500 dark:hover:text-neutral-900"
-      >
-        {children}
-      </button>
-    );
-  } else {
-    return (
-      <button
-        onClick={handleClick}
-        className="font-notosans-m dark:text-neutral-0 rounded-4xl bg-neutral-0 border-1 hover:text-neutral-0 cursor-pointer border-neutral-300 px-4 py-2 text-neutral-900 shadow hover:border-red-700 hover:bg-red-700 active:border-red-700 active:bg-red-700 dark:border-neutral-500 dark:bg-neutral-600 dark:hover:border-red-500 dark:hover:bg-red-500 dark:hover:text-neutral-900 dark:active:border-red-500 dark:active:bg-red-500"
-      >
-        {children}
-      </button>
-    );
-  }
+  const baseClasses =
+    "font-notosans-m rounded-4xl border-1 cursor-pointer px-4 py-2 shadow hover:text-neutral-0 hover:border-red-700 hover:bg-red-700 dark:hover:border-red-500 dark:hover:bg-red-500 dark:hover:text-neutral-900";
+
+  const modalYesClasses =
+    "border-neutral-300 bg-neutral-100 text-neutral-900 dark:border-0 dark:border-neutral-500 dark:bg-neutral-400";
+
+  const modalNoClasses =
+    "border-neutral-300 bg-red-100 text-neutral-900 dark:border-0 dark:border-neutral-500 dark:bg-red-300";
+
+  const defaultClasses =
+    "bg-neutral-0 border-neutral-300 text-neutral-900 dark:border-neutral-500 dark:bg-neutral-600 dark:text-neutral-0";
+
+  const getButtonClasses = () => {
+    if (modal === "yes") return `${baseClasses} ${modalYesClasses}`;
+    if (modal === "no") return `${baseClasses} ${modalNoClasses}`;
+    return `${baseClasses} ${defaultClasses}`;
+  };
+
+  return (
+    <button onClick={handleClick} className={getButtonClasses()}>
+      {children}
+    </button>
+  );
 }

@@ -1,12 +1,11 @@
 import { type CardType } from "../types/type";
-import data from "../data/data.json";
 import Card from "./Card";
-import { useState } from "react";
 import { useModal } from "../contexts/modalContext/useModal";
+import { useExtensionsFilter } from "../contexts/extensionsFilterContext/useExtensionsFilter";
 
 // CardCollection.tsx
 export default function CardCollection() {
-  const [cards, setCards] = useState<CardType[]>(data);
+  const { setCards, filteredCards, toggleCardActive } = useExtensionsFilter();
   const { openDeleteModal } = useModal();
 
   const handleRemoveCard = (cardName: string) => {
@@ -15,7 +14,7 @@ export default function CardCollection() {
 
   return (
     <div className="grid grid-cols-1 items-center justify-center gap-4 xl:grid-cols-3">
-      {cards.map((card: CardType, index: number) => {
+      {filteredCards.map((card: CardType, index: number) => {
         return (
           <Card
             key={index}
@@ -26,6 +25,7 @@ export default function CardCollection() {
             onRemove={() =>
               openDeleteModal(card.name, () => handleRemoveCard(card.name))
             }
+            onToggleActive={() => toggleCardActive(card.name)}
           />
         );
       })}

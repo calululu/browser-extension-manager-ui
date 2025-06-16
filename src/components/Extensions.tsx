@@ -1,3 +1,4 @@
+// import { useExtensionsFilter } from "../contexts/extensionsFilterContext/useExtensionsFilter";
 import ButtonExtensionsFilter from "./ButtonExtensionsFilter";
 import CardCollection from "./CardCollection";
 
@@ -9,9 +10,13 @@ export default function Extensions() {
           Extensions List
         </h1>
         <div className="my-4 flex justify-around xl:justify-center xl:gap-4">
-          <ButtonExtensionsFilter>All</ButtonExtensionsFilter>
-          <ButtonExtensionsFilter>Active</ButtonExtensionsFilter>
-          <ButtonExtensionsFilter>Inactive</ButtonExtensionsFilter>
+          <ButtonExtensionsFilter filter="All">All</ButtonExtensionsFilter>
+          <ButtonExtensionsFilter filter="Active">
+            Active
+          </ButtonExtensionsFilter>
+          <ButtonExtensionsFilter filter="Inactive">
+            Inactive
+          </ButtonExtensionsFilter>
         </div>
       </div>
       <CardCollection />

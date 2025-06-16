@@ -3,7 +3,7 @@ export default function SwitchButton({
   onToggle,
 }: {
   isActive: boolean;
-  onToggle: () => void;
+  onToggle?: () => void;
 }) {
   return (
     <label className="relative inline-block h-[26px] w-[50px]">
