@@ -1,4 +1,4 @@
-import Button from "./Button";
+import ButtonExtensionsFilter from "./ButtonExtensionsFilter";
 import CardCollection from "./CardCollection";
 
 export default function Extensions() {
@@ -9,9 +9,9 @@ export default function Extensions() {
           Extensions List
         </h1>
         <div className="my-4 flex justify-around xl:justify-center xl:gap-4">
-          <Button>All</Button>
-          <Button>Active</Button>
-          <Button>Inactive</Button>
+          <ButtonExtensionsFilter>All</ButtonExtensionsFilter>
+          <ButtonExtensionsFilter>Active</ButtonExtensionsFilter>
+          <ButtonExtensionsFilter>Inactive</ButtonExtensionsFilter>
         </div>
       </div>
       <CardCollection />

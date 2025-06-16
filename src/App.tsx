@@ -1,6 +1,8 @@
 import DeleteModal from "./components/DeleteModal";
 import Extensions from "./components/Extensions";
 import Header from "./components/Header";
+//Context API
+import ExtensionsFilterProvider from "./contexts/extensionsFilterContext/ExtensionsFilterProvider";
 import { ModalProvider } from "./contexts/modalContext/ModalProvider";
 
 function App() {
@@ -10,7 +12,9 @@ function App() {
 
       {/* wrap all the components I need in the ConextAPI component */}
       <ModalProvider>
-        <Extensions />
+        <ExtensionsFilterProvider>
+          <Extensions />
+        </ExtensionsFilterProvider>
         <DeleteModal />
       </ModalProvider>
     </div>
