@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ExtensionsFilterContext } from "./extensionsFilterContext";
+import { ExtensionsFilterContext } from "./ExtensionsFilterContext";
 
 export function useExtensionsFilter() {
   const context = useContext(ExtensionsFilterContext);

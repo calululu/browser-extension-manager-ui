@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ExtensionsFilterContext } from "./extensionsFilterContext";
+import { ExtensionsFilterContext } from "./ExtensionsFilterContext";
 import { type FilterOption } from "../../types/type";
 import { type CardType } from "../../types/type";
 import data from "../../data/data.json";
